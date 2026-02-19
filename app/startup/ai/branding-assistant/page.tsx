@@ -165,6 +165,7 @@ export default function BrandingAssistantPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Brand Style</label>
+                  {/* Native select to avoid Select component type dependency */}
                   <select
                     value={brandStyle}
                     onChange={(e) => setBrandStyle(e.target.value as typeof brandStyle)}
