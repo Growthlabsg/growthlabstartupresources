@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
-import Select from '@/components/ui/Select'
 import Badge from '@/components/ui/Badge'
 import { Sparkles, Palette, Save, Copy, Lightbulb, Eye, Type, Droplet } from 'lucide-react'
 import { showToast } from '@/components/ui/ToastContainer'
@@ -166,18 +165,17 @@ export default function BrandingAssistantPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Brand Style</label>
-                  <Select
+                  <select
                     value={brandStyle}
-                    onChange={(e) => setBrandStyle(e.target.value as any)}
-                    className="w-full"
-                    options={[
-                      { value: 'modern', label: 'Modern' },
-                      { value: 'classic', label: 'Classic' },
-                      { value: 'bold', label: 'Bold' },
-                      { value: 'minimal', label: 'Minimal' },
-                      { value: 'playful', label: 'Playful' },
-                    ]}
-                  />
+                    onChange={(e) => setBrandStyle(e.target.value as typeof brandStyle)}
+                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-all bg-white"
+                  >
+                    <option value="modern">Modern</option>
+                    <option value="classic">Classic</option>
+                    <option value="bold">Bold</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="playful">Playful</option>
+                  </select>
                 </div>
 
                 <div>
