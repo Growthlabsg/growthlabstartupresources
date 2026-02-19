@@ -160,12 +160,13 @@ export default function ChatbotBuilderPage() {
                     value={tone}
                     onChange={(e) => setTone(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="professional">Professional</option>
-                    <option value="friendly">Friendly</option>
-                    <option value="casual">Casual</option>
-                    <option value="supportive">Supportive</option>
-                  </Select>
+                    options={[
+                      { value: 'professional', label: 'Professional' },
+                      { value: 'friendly', label: 'Friendly' },
+                      { value: 'casual', label: 'Casual' },
+                      { value: 'supportive', label: 'Supportive' },
+                    ]}
+                  />
                 </div>
 
                 <div>

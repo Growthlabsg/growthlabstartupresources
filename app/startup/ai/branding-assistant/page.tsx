@@ -170,13 +170,14 @@ export default function BrandingAssistantPage() {
                     value={brandStyle}
                     onChange={(e) => setBrandStyle(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="modern">Modern</option>
-                    <option value="classic">Classic</option>
-                    <option value="bold">Bold</option>
-                    <option value="minimal">Minimal</option>
-                    <option value="playful">Playful</option>
-                  </Select>
+                    options={[
+                      { value: 'modern', label: 'Modern' },
+                      { value: 'classic', label: 'Classic' },
+                      { value: 'bold', label: 'Bold' },
+                      { value: 'minimal', label: 'Minimal' },
+                      { value: 'playful', label: 'Playful' },
+                    ]}
+                  />
                 </div>
 
                 <div>
@@ -254,7 +255,7 @@ export default function BrandingAssistantPage() {
                           onClick={() => copyColor(color as string)}
                         />
                         <p className="text-xs font-medium text-gray-700 capitalize">{name}</p>
-                        <p className="text-xs text-gray-500 font-mono">{color}</p>
+                        <p className="text-xs text-gray-500 font-mono">{String(color)}</p>
                       </div>
                     ))}
                   </div>
@@ -267,7 +268,7 @@ export default function BrandingAssistantPage() {
                       <div key={type} className="p-4 bg-gray-50 rounded-lg">
                         <p className="text-sm font-medium text-gray-700 capitalize mb-2">{type} Font</p>
                         <p className="text-2xl" style={{ fontFamily: font as string }}>
-                          {font} - The quick brown fox jumps over the lazy dog
+                          {String(font)} - The quick brown fox jumps over the lazy dog
                         </p>
                       </div>
                     ))}

@@ -209,12 +209,13 @@ Duration: ${duration || '12'} months`
                     value={grantType}
                     onChange={(e) => setGrantType(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="government">Government Grant</option>
-                    <option value="foundation">Foundation Grant</option>
-                    <option value="corporate">Corporate Grant</option>
-                    <option value="research">Research Grant</option>
-                  </Select>
+                    options={[
+                      { value: 'government', label: 'Government Grant' },
+                      { value: 'foundation', label: 'Foundation Grant' },
+                      { value: 'corporate', label: 'Corporate Grant' },
+                      { value: 'research', label: 'Research Grant' },
+                    ]}
+                  />
                 </div>
 
                 <div>

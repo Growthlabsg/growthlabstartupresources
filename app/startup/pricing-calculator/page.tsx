@@ -30,7 +30,7 @@ import {
   TrendingDown
 } from 'lucide-react'
 import { showToast } from '@/components/ui/ToastContainer'
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart as RechartsPieChart, Pie, Cell } from 'recharts'
+import { LineChart, Line, BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart as RechartsPieChart, Pie, Cell } from 'recharts'
 
 type PricingStrategy = 'cost-plus' | 'value-based' | 'competitive' | 'penetration' | 'skimming' | 'dynamic'
 type PricingTier = 'basic' | 'standard' | 'premium' | 'enterprise' | 'custom'

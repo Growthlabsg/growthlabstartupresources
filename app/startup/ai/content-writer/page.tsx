@@ -125,13 +125,14 @@ export default function ContentWriterPage() {
                     value={contentType}
                     onChange={(e) => setContentType(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="blog">Blog Post</option>
-                    <option value="article">Article</option>
-                    <option value="landing-page">Landing Page</option>
-                    <option value="product-description">Product Description</option>
-                    <option value="social-post">Social Media Post</option>
-                  </Select>
+                    options={[
+                      { value: 'blog', label: 'Blog Post' },
+                      { value: 'article', label: 'Article' },
+                      { value: 'landing-page', label: 'Landing Page' },
+                      { value: 'product-description', label: 'Product Description' },
+                      { value: 'social-post', label: 'Social Media Post' },
+                    ]}
+                  />
                 </div>
 
                 <div>
@@ -140,12 +141,13 @@ export default function ContentWriterPage() {
                     value={tone}
                     onChange={(e) => setTone(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="professional">Professional</option>
-                    <option value="casual">Casual</option>
-                    <option value="friendly">Friendly</option>
-                    <option value="persuasive">Persuasive</option>
-                  </Select>
+                    options={[
+                      { value: 'professional', label: 'Professional' },
+                      { value: 'casual', label: 'Casual' },
+                      { value: 'friendly', label: 'Friendly' },
+                      { value: 'persuasive', label: 'Persuasive' },
+                    ]}
+                  />
                 </div>
 
                 <div>

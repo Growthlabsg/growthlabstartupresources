@@ -358,29 +358,20 @@ export default function TermSheetPage() {
   ]
 
   const applyTemplate = (template: typeof templates[0]) => {
+    const templateUpdates = {
+      liquidationPreference: template.terms.liquidationPreference,
+      participationRights: template.terms.participationRights,
+      antiDilution: template.terms.antiDilution,
+      boardSeats: template.terms.boardSeats,
+      optionPool: template.terms.optionPool
+    }
     if (!editingSheet) {
       createNewTermSheet()
       setTimeout(() => {
-        if (editingSheet) {
-          setEditingSheet({
-            ...editingSheet,
-            liquidationPreference: template.terms.liquidationPreference,
-            participationRights: template.terms.participationRights,
-            antiDilution: template.terms.antiDilution,
-            boardSeats: template.terms.boardSeats,
-            optionPool: template.terms.optionPool
-          })
-        }
+        setEditingSheet(prev => prev ? { ...prev, ...templateUpdates } as TermSheet : prev)
       }, 100)
     } else {
-      setEditingSheet({
-        ...editingSheet,
-        liquidationPreference: template.terms.liquidationPreference,
-        participationRights: template.terms.participationRights,
-        antiDilution: template.terms.antiDilution,
-        boardSeats: template.terms.boardSeats,
-        optionPool: template.terms.optionPool
-      })
+      setEditingSheet({ ...editingSheet, ...templateUpdates } as TermSheet)
     }
     showToast(`${template.name} template applied!`, 'success')
   }

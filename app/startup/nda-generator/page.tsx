@@ -352,10 +352,10 @@ Signature
   }
 
   const exportToPDF = (nda: NDA) => {
-    const document = generateNDADocument(nda)
-    const blob = new Blob([document], { type: 'text/plain' })
+    const docText = generateNDADocument(nda)
+    const blob = new Blob([docText], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
+    const a = window.document.createElement('a')
     a.href = url
     a.download = `${nda.title.replace(/\s+/g, '-')}.txt`
     a.click()
@@ -365,7 +365,7 @@ Signature
   }
 
   const exportToWord = (nda: NDA) => {
-    const document = generateNDADocument(nda)
+    const docText = generateNDADocument(nda)
     const html = `
 <!DOCTYPE html>
 <html>
@@ -380,13 +380,13 @@ Signature
   </style>
 </head>
 <body>
-  <pre style="white-space: pre-wrap; font-family: Arial, sans-serif;">${document}</pre>
+  <pre style="white-space: pre-wrap; font-family: Arial, sans-serif;">${docText}</pre>
 </body>
 </html>
     `
     const blob = new Blob([html], { type: 'text/html' })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
+    const a = window.document.createElement('a')
     a.href = url
     a.download = `${nda.title.replace(/\s+/g, '-')}.html`
     a.click()

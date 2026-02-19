@@ -303,8 +303,8 @@ export default function SWOTAnalysisPage() {
     }
   }
 
-  const generateStrategies = () => {
-    const strategies = []
+  const generateStrategies = (): { type: string; title: string; description: string }[] => {
+    const strategies: { type: string; title: string; description: string }[] = []
     
     // SO Strategies (Strengths + Opportunities)
     strengths.forEach(s => {

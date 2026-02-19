@@ -719,7 +719,7 @@ export default function EmploymentLawPage() {
                 <ResponsiveContainer width="100%" height={300}>
                   <PieChart>
                     <Pie data={contractsByType} cx="50%" cy="50%" labelLine={false}
-                      label={({ name, count }) => `${name}: ${count}`} outerRadius={100} dataKey="count">
+                      label={({ name, value }) => `${name}: ${value}`} outerRadius={100} dataKey="count">
                       {contractsByType.map((_, idx) => <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />)}
                     </Pie>
                     <Tooltip />

@@ -114,12 +114,13 @@ export default function InvestorEmailsPage() {
                     value={emailType}
                     onChange={(e) => setEmailType(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="cold-outreach">Cold Outreach</option>
-                    <option value="follow-up">Follow-up</option>
-                    <option value="pitch-request">Pitch Request</option>
-                    <option value="update">Progress Update</option>
-                  </Select>
+                    options={[
+                      { value: 'cold-outreach', label: 'Cold Outreach' },
+                      { value: 'follow-up', label: 'Follow-up' },
+                      { value: 'pitch-request', label: 'Pitch Request' },
+                      { value: 'update', label: 'Progress Update' },
+                    ]}
+                  />
                 </div>
 
                 <div>
@@ -160,13 +161,14 @@ export default function InvestorEmailsPage() {
                     value={stage}
                     onChange={(e) => setStage(e.target.value)}
                     className="w-full"
-                  >
-                    <option value="">Select stage</option>
-                    <option value="Pre-Seed">Pre-Seed</option>
-                    <option value="Seed">Seed</option>
-                    <option value="Series A">Series A</option>
-                    <option value="Series B">Series B</option>
-                  </Select>
+                    options={[
+                      { value: '', label: 'Select stage' },
+                      { value: 'Pre-Seed', label: 'Pre-Seed' },
+                      { value: 'Seed', label: 'Seed' },
+                      { value: 'Series A', label: 'Series A' },
+                      { value: 'Series B', label: 'Series B' },
+                    ]}
+                  />
                 </div>
 
                 <div>

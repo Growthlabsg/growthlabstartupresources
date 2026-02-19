@@ -128,12 +128,13 @@ export default function SocialMediaGeneratorPage() {
                     value={platform}
                     onChange={(e) => setPlatform(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="twitter">Twitter / X</option>
-                    <option value="linkedin">LinkedIn</option>
-                    <option value="instagram">Instagram</option>
-                    <option value="facebook">Facebook</option>
-                  </Select>
+                    options={[
+                      { value: 'twitter', label: 'Twitter / X' },
+                      { value: 'linkedin', label: 'LinkedIn' },
+                      { value: 'instagram', label: 'Instagram' },
+                      { value: 'facebook', label: 'Facebook' },
+                    ]}
+                  />
                 </div>
 
                 <div>
@@ -142,12 +143,13 @@ export default function SocialMediaGeneratorPage() {
                     value={tone}
                     onChange={(e) => setTone(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="professional">Professional</option>
-                    <option value="casual">Casual</option>
-                    <option value="fun">Fun</option>
-                    <option value="inspirational">Inspirational</option>
-                  </Select>
+                    options={[
+                      { value: 'professional', label: 'Professional' },
+                      { value: 'casual', label: 'Casual' },
+                      { value: 'fun', label: 'Fun' },
+                      { value: 'inspirational', label: 'Inspirational' },
+                    ]}
+                  />
                 </div>
 
                 <div className="flex items-center gap-2">

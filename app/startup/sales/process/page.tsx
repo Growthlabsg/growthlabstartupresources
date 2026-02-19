@@ -728,7 +728,7 @@ export default function SalesProcessPage() {
   const toggleSequenceStatus = (id: string) => {
     const updated = sequences.map(s => {
       if (s.id === id) {
-        const newStatus = s.status === 'active' ? 'paused' : 'active'
+        const newStatus: SequenceStatus = s.status === 'active' ? 'paused' : 'active'
         return { ...s, status: newStatus }
       }
       return s

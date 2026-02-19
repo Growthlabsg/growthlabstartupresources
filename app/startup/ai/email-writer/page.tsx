@@ -116,13 +116,14 @@ export default function EmailWriterPage() {
                     value={campaignType}
                     onChange={(e) => setCampaignType(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="welcome">Welcome Email</option>
-                    <option value="promotional">Promotional</option>
-                    <option value="newsletter">Newsletter</option>
-                    <option value="follow-up">Follow-up</option>
-                    <option value="cold-outreach">Cold Outreach</option>
-                  </Select>
+                    options={[
+                      { value: 'welcome', label: 'Welcome Email' },
+                      { value: 'promotional', label: 'Promotional' },
+                      { value: 'newsletter', label: 'Newsletter' },
+                      { value: 'follow-up', label: 'Follow-up' },
+                      { value: 'cold-outreach', label: 'Cold Outreach' },
+                    ]}
+                  />
                 </div>
 
                 <div>

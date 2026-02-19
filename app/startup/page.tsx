@@ -308,7 +308,7 @@ export default function StartupHubPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link href="/startup/guides">
-              <Button variant="default" size="lg" className="w-full sm:w-auto bg-white text-primary-600 hover:bg-gray-100">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-white text-primary-600 hover:bg-gray-100">
                 <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 Browse Guides
               </Button>

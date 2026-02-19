@@ -167,12 +167,13 @@ Please submit your resume and cover letter through our application portal. We lo
                     value={employmentType}
                     onChange={(e) => setEmploymentType(e.target.value as any)}
                     className="w-full"
-                  >
-                    <option value="full-time">Full-Time</option>
-                    <option value="part-time">Part-Time</option>
-                    <option value="contract">Contract</option>
-                    <option value="internship">Internship</option>
-                  </Select>
+                    options={[
+                      { value: 'full-time', label: 'Full-Time' },
+                      { value: 'part-time', label: 'Part-Time' },
+                      { value: 'contract', label: 'Contract' },
+                      { value: 'internship', label: 'Internship' },
+                    ]}
+                  />
                 </div>
 
                 <div>

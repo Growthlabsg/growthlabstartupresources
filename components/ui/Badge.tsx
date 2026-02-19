@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-interface BadgeProps {
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: ReactNode
-  variant?: 'new' | 'featured' | 'popular' | 'beginner' | 'intermediate' | 'advanced' | 'outline' | 'category' | 'success' | 'info' | 'warning'
+  variant?: 'new' | 'featured' | 'popular' | 'beginner' | 'intermediate' | 'advanced' | 'outline' | 'category' | 'success' | 'info' | 'warning' | 'error'
   className?: string
 }
 
-export default function Badge({ children, variant, className }: BadgeProps) {
+export default function Badge({ children, variant, className, ...rest }: BadgeProps) {
   const variants = {
     new: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
     featured: 'bg-amber-100 text-amber-700 border border-amber-200',
@@ -20,6 +20,7 @@ export default function Badge({ children, variant, className }: BadgeProps) {
     success: 'bg-green-100 text-green-700 border border-green-200',
     info: 'bg-sky-100 text-sky-700 border border-sky-200',
     warning: 'bg-amber-100 text-amber-700 border border-amber-200',
+    error: 'bg-red-100 text-red-700 border border-red-200',
   }
   
   return (
@@ -30,6 +31,7 @@ export default function Badge({ children, variant, className }: BadgeProps) {
         !variant && 'bg-gray-100 text-gray-700 border border-gray-200',
         className
       )}
+      {...rest}
     >
       {children}
     </span>
